@@ -1,25 +1,19 @@
 package fr.lernejo.server;
 
-import java.io.IOException;
-import java.io.OutputStream;
-
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
-public class MyHttpHandler implements HttpHandler {
+import java.io.IOException;
+import java.io.OutputStream;
+
+public class HttpHandlerHomeMade implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
-
-        String check = "OK";
-        exchange.sendResponseHeaders(200, check.length());
-
+        String body = "Hello";
+        exchange.sendResponseHeaders(200, body.length());
         try (OutputStream os = exchange.getResponseBody()) { // (1)
-            os.write(check.getBytes());
+            os.write(body.getBytes());
         }
-
-        exchange.close();
-
     }
-
 }
