@@ -18,7 +18,7 @@ public class StartMyHttpHandler implements HttpHandler {
     public final ObjectMapper MyObj = new ObjectMapper();
 
     @Override
-    public void handler(HttpExchange exchange) throws IOException {
+    public void handle(HttpExchange exchange) throws IOException {
 
         if (exchange.getRequestMethod().equals("POST")) {
             isValidRequest(exchange);

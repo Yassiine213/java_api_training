@@ -9,7 +9,7 @@ import com.sun.net.httpserver.HttpHandler;
 public class MyHttpHandler implements HttpHandler {
 
     @Override
-    public void handler(HttpExchange exchange) throws IOException {
+    public void handle(HttpExchange exchange) throws IOException {
 
         String check = "OK";
         exchange.sendResponseHeaders(200, check.length());
