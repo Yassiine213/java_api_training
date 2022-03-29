@@ -31,7 +31,6 @@ public class StartMyHttpHandler implements HttpHandler {
             }
             exchange.close();
         }
-
     }
 
     public void isValidRequest(HttpExchange exchange) throws IOException {
@@ -56,7 +55,6 @@ public class StartMyHttpHandler implements HttpHandler {
     private List<String> loadJson(HttpExchange exchange) throws IOException {
 
         JsonNode json;
-
         if(!Objects.isNull(exchange))
             json = this.MyObj.readTree(exchange.getRequestBody());
         else
@@ -65,8 +63,6 @@ public class StartMyHttpHandler implements HttpHandler {
         Iterator<String> it = json.fieldNames();
         List<String> keys = new ArrayList<String>();
         it.forEachRemaining(e -> keys.add(e));
-
         return keys;
-
     }
 }
