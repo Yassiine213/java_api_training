@@ -14,6 +14,7 @@ public class MyServer {
         HttpServer server = HttpServer.create(new InetSocketAddress("localhost", port), 0);
         server.setExecutor(Executors.newFixedThreadPool(1));
         server.createContext("/ping", new HttpHandlerHomeMade());
+        server.createContext("/api/game/start", new HttpHandlerStart());
         server.start();
     }
     /*public final int port;

@@ -1,0 +1,9 @@
+"id": {
+"type": "string"
+},
+"url": {
+"type": "string"
+},
+"message": {
+"type": "string"
+}
