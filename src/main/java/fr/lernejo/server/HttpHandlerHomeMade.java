@@ -10,10 +10,8 @@ public class HttpHandlerHomeMade implements HttpHandler {
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
-        String body = "Hello";
-        exchange.sendResponseHeaders(200, body.length());
-        try (OutputStream os = exchange.getResponseBody()) { // (1)
-            os.write(body.getBytes());
-        }
+        exchange.sendResponseHeaders(200, "OK".length());
+        exchange.getResponseBody().write("OK".getBytes());
+        exchange.close();
     }
 }

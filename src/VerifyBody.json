@@ -1,9 +1,20 @@
-"id": {
-"type": "string"
-},
-"url": {
-"type": "string"
-},
-"message": {
-"type": "string"
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "url": {
+            "type": "string"
+        },
+        "message": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "url",
+        "message"
+    ]
 }
